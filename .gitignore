@@ -1,0 +1,8 @@
+/node_modules
+/*.log
+/*.log[-._]*
+/npm
+*.env
+*.env.*
+**/.idea
+/build

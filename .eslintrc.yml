@@ -1,0 +1,154 @@
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaVersion: 10
+  sourceType: module
+  ecmaFeatures:
+    impliedStrict: true
+    jsx: true
+
+settings:
+  react:
+    pragma: React
+
+plugins:
+  - '@typescript-eslint'
+  - import
+  - react
+  - jsx-a11y
+  - prettier
+  - react-hooks
+
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - prettier
+  - prettier/@typescript-eslint
+  - airbnb
+
+env:
+  browser: true
+
+rules:
+  prettier/prettier:
+    - error
+    - singleQuote: true
+
+  semi: off
+  no-undef: off
+  arrow-parens: off
+  implicit-arrow-linebreak: off
+  no-confusing-arrow: off
+  function-paren-newline: off
+  indent: off
+  object-curly-newline: off
+  operator-linebreak: off
+  object-curly-spacing: off
+  no-use-before-define: off
+  quote-props: off
+  jsx-quotes: off
+  space-infix-ops: off
+  no-multi-spaces: off
+  comma-dangle: off
+  arrow-spacing: off
+  comma-spacing: off
+  space-before-blocks: off
+  keyword-spacing: off
+  nonblock-statement-body-position: off
+  curly: off
+  padded-blocks: off
+  brace-style: off
+  no-trailing-spaces: off
+  block-spacing: off
+  max-len: off
+  array-callback-return: off
+  key-spacing: off
+  consistent-return: off
+  no-multiple-empty-lines: off
+  space-before-function-paren: off
+  no-unused-expressions: off
+  new-parens: off
+  global-require: off
+  object-property-newline: off
+  comma-style: off
+  no-throw-literal: off
+  max-classes-per-file: off
+  no-shadow: off
+  no-console: error
+
+  import/no-extraneous-dependencies: off
+  import/no-unresolved: off
+  import/named: off
+  import/export: off
+  import/extensions: off
+  import/prefer-default-export: off
+  jsx-a11y/no-autofocus: off
+  jsx-a11y/anchor-is-valid: off
+  react/jsx-curly-newline: off
+  react/style-prop-object: off
+  react/jsx-props-no-spreading: off
+  react/prop-types: off
+  react/jsx-indent: off
+  react/jsx-closing-tag-location: off
+  react/self-closing-comp: off
+  react/jsx-wrap-multilines: off
+  react/jsx-equals-spacing: off
+  react/jsx-one-expression-per-line: off
+  react/jsx-closing-bracket-location: off
+  react/destructuring-assignment: off
+  react/jsx-max-props-per-line: off
+  react/jsx-indent-props: off
+  react/jsx-tag-spacing: off
+  react/jsx-first-prop-new-line: off
+  react/jsx-props-no-multi-spaces: off
+
+  # quote-props: [error, as-needed]
+  eqeqeq: [error, smart]
+  no-dupe-keys: error
+  prefer-destructuring: error
+  no-shadow-restricted-names: error
+  no-unused-vars:
+    - error
+    - vars: all
+      varsIgnorePattern: ^_
+      args: after-used
+      ignoreRestSiblings: false
+      argsIgnorePattern: ^_
+      caughtErrors: all
+      caughtErrorsIgnorePattern: ^_$
+  no-useless-return: error
+  no-useless-computed-key: error
+  no-useless-rename: error
+  no-path-concat: error
+  no-useless-concat: error
+  prefer-template: error
+  no-param-reassign:
+    - error
+    - props: false
+
+  # import/no-mutable-exports: error
+  import/no-default-export: off
+  # import/first: error
+  # import/no-webpack-loader-syntax: error
+
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  react/react-in-jsx-scope: error
+
+  react/require-default-props: off
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+        - .js
+        - .tsx
+  react/no-unescaped-entities:
+    - error
+    - forbid:
+      - '<'
+      - '>'
+      - '{'
+      - '}'
+
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: error

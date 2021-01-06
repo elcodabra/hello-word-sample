@@ -1,0 +1,12 @@
+{
+  "name": "@wordzzz/common",
+  "version": "1.0.0",
+  "description": "Wordzzz - Common components",
+  "author": "Aleksandr Konovalov",
+  "license": "MIT",
+  "main": "src/index.js",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^17.0.1"
+  }
+}

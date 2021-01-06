@@ -1,0 +1,153 @@
+.popup__container {
+  position: absolute;
+  bottom: calc(100% + 14px);
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  padding: 23px;
+  border-radius: 9px;
+
+  font-family: "Euclid Circular A";
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 20px;
+
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  box-shadow: 0 11px 33px 0 rgba(0,0,0,0.14);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 216px;
+  min-height: 142px;
+  /*max-height: 150px;*/
+  pointer-events: none;
+}
+
+
+.popup__button-add {
+  width: 35px;
+  height: 35px;
+  border-top-left-radius: 35px;
+
+  color: var(--font-color-dark-theme);
+  background: var(--main-color);
+
+  text-align: center;
+  cursor: pointer;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.popup__button-add:before {
+  content: '+';
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+
+.popup__main-word {
+  margin: 18px 0;
+  font-size: 26px;
+  font-weight: 500;
+  white-space: normal;
+  text-transform: lowercase;
+}
+
+.popup__transcription, .popup__translation {
+  opacity: 0.5;
+}
+
+.popup__translation {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+.popup__translation::-webkit-scrollbar {
+  display: none;
+}
+
+.popup__empty-title {
+  font-size: 16px;
+
+  margin-top: 12px;
+}
+
+.popup__empty-description {
+  font-size: 14px;
+  color: #807E87;
+
+  margin-top: 6px;
+}
+
+.popup__icon__search {
+  content: " ";
+  display: block;
+  background-image: url("public/images/icon_search.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 39px;
+  width: 39px;
+}
+
+.icon__loading {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(60deg, #ff43a5 0%, #ff9358 100%);
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
+  transition: all 0.5s ease-in;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.icon__loading:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+}
+.icon__loading:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+}
+
+.icon__loading:before, .icon__loading:after {
+  background: var(--bg-color);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

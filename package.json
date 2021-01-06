@@ -1,0 +1,32 @@
+{
+  "name": "wordzzz",
+  "version": "1.0.0",
+  "description": "Wordzzz - Browser Extension, Web & Mobile app",
+  "author": "Aleksandr Konovalov",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "lerna": "^3.22.1",
+    "prettier": "^2.2.1",
+    "rimraf": "^2.7.1",
+    "typescript": "^4.1.3"
+  },
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripits": {
+    "build": "lerna run build"
+  }
+}
