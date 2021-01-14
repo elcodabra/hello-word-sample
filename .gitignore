@@ -5,6 +5,4 @@
 *.env
 *.env.*
 **/.idea
-/build
-/dist
 package-lock.json
