@@ -1,0 +1,56 @@
+{
+  "short_name": {
+    "message": "Hello, Word!"
+  },
+  "name": {
+    "message": "Hello, Word! – Learn language with video subs"
+  },
+  "description": {
+    "message": "Boost your language learning with Hello, Word!"
+  },
+  "support_us": {
+    "message": "Support us"
+  },
+  "iknow_word": {
+    "message": "I know this"
+  },
+  "next_word": {
+    "message": "Next word"
+  },
+  "select_lang": {
+    "message": "TRANSLATE:"
+  },
+  "saved_words": {
+    "message": "SAVED: $1"
+  },
+  "play_words": {
+    "message": "LEARN TODAY: $1"
+  },
+  "back_button": {
+    "message": "Back"
+  },
+  "clear_button": {
+    "message": "Clear"
+  },
+  "start_button": {
+    "message": "Start learning"
+  },
+  "finish_button": {
+    "message": "Quit lesson"
+  },
+  "skeleton_empty_title": {
+    "message": "No new words"
+  },
+  "skeleton_empty_hint": {
+    "message": "Add new words from videos to see them here."
+  },
+  "translation_not_found_title": {
+    "message": "Translation not found"
+  },
+  "translation_not_found_description": {
+    "message": "We can't find anything for the languages"
+  },
+  "translation_not_found_languages": {
+    "message": "$1-$2"
+  }
+}

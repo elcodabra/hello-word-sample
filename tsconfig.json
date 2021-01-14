@@ -8,6 +8,14 @@
     "typeRoots": ["node_modules/@types"],
     "resolveJsonModule": true,
     "jsx": "react",
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "packages"
+  ],
+  "exclude": [
+    "node_modules",
+    "public"
+  ]
 }

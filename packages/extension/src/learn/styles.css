@@ -1,0 +1,205 @@
+
+body {
+  margin: 0;
+  overflow: hidden;
+
+  font-family: "Euclid Circular A", serif;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+}
+.hw_learn {
+  height: 100vh;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.hw_game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hw_game-container {
+  height: 100%;
+  position: relative;
+}
+.hw_game-title {
+  color: var(--link-color);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.hw_game-word {
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+.hw_game-hint {
+  opacity: 0.8;
+}
+.hw_game-actions {
+  display: flex;
+  justify-content: center;
+}
+.hw_card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
+}
+.hw_card:hover .hw_card-front {
+  transform: rotateX(-180deg);
+}
+.hw_card:hover .hw_card-back {
+  transform: rotateX(0deg);
+}
+.hw_card-front {
+  transform: rotateX(0deg);
+}
+/*
+.hw-card-front {
+  background-image: url(https://99px.ru/sstorage/56/2013/12/image_563012130153328414049.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+*/
+.hw_card-front:after {
+  position: absolute;
+  bottom: 10%;
+
+  content: ' ';
+  display: block;
+  background-image: url("~static/images/icon_show.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1em;
+  width: 1em;
+}
+.hw_card-back {
+  transform: rotateX(180deg);
+}
+.hw_card-front,
+.hw_card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: var(--main-color);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: 0.5s;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 35px 17px;
+  font-size: 3em;
+}
+.hw_card-front h2,
+.hw_card-back h2 {
+  margin: 0 auto;
+}
+.hw_card-front h2 span,
+.hw_card-back h2 span {
+  font-size: 2em;
+}
+.hw_card-front a,
+.hw_card-back a {
+  height: 20px;
+  width: 20px;
+  padding: 5px 5px;
+  border-radius: 4px;
+  line-height: 20px;
+}
+.hw_card-front a:hover,
+.hw_card-back a:hover {
+  color: #000000;
+  background-color: #fff;
+}
+.hw_card__word {
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+.hw_card__hint {
+  opacity: 0.8;
+}
+.hw_button__secondary {
+  max-width: 200px;
+  width: 100%;
+  height: 150px;
+  margin: 0 50px;
+}
+
+.hw_title__success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hw_confetti {
+  width: 15px;
+  height: 15px;
+  background-color: #f2d74e;
+  position: absolute;
+  left: 50%;
+  animation: confetti 5s ease-in-out -2s infinite;
+  transform-origin: left top;
+}
+.hw_confetti:nth-child(1) {
+  background-color: #f2d74e; left: 10%; animation-delay: 0;
+}
+.hw_confetti:nth-child(2) {
+  background-color: #95c3de; left: 20%; animation-delay: -5s;
+}
+.hw_confetti:nth-child(3) {
+  background-color: #ff9a91; left: 30%; animation-delay: -3s;
+}
+.hw_confetti:nth-child(4) {
+  background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+}
+.hw_confetti:nth-child(5) {
+  background-color: #95c3de; left: 50%; animation-delay: -4s;
+}
+.hw_confetti:nth-child(6) {
+  background-color: #ff9a91; left: 60%; animation-delay: -6s;
+}
+.hw_confetti:nth-child(7) {
+  background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+}
+.hw_confetti:nth-child(8) {
+  background-color: #95c3de; left: 80%; animation-delay: -2s;
+}
+.hw_confetti:nth-child(9) {
+  background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+}
+.hw_confetti:nth-child(10) {
+  background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
+}
+
+@keyframes confetti {
+  0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+  25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+  50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+  75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+  100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--font-color-dark-theme);
+    background-color: var(--bg-color-dark-theme);
+  }
+}

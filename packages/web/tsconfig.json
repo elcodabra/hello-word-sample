@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~public/*" : ["../../public/*"],
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

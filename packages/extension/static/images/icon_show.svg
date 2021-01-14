@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic-show</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Word-Card" transform="translate(-1429.000000, -364.000000)" stroke="#FFFFFF" stroke-width="1.5999999">
+            <g id="ic-show" transform="translate(1429.000000, 364.000000)">
+                <path d="M3,12.3999996 C3,12.3999996 6.19999981,6 11.7999995,6 C17.3999991,6 20.599999,12.3999996 20.599999,12.3999996 C20.599999,12.3999996 17.3999991,18.7999992 11.7999995,18.7999992 C6.19999981,18.7999992 3,12.3999996 3,12.3999996 Z" id="Path"></path>
+                <circle id="Oval" cx="11.7999995" cy="12.3999996" r="2.39999986"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

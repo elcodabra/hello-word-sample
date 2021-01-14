@@ -1,0 +1,15 @@
+
+.hw-icon {
+  border: 3px solid;
+  border-color: var(--font-color-dark-theme);
+  border-radius: 50%;
+  box-shadow: 0 11px 33px 0 rgba(0,0,0,0.14);
+  opacity: .9;
+  cursor: pointer;
+}
+
+.hw-icon:hover {
+  border: 2px solid;
+  border-color: var(--font-color-dark-theme);
+  opacity: 1;
+}

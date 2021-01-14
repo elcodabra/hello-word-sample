@@ -7,8 +7,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const root = resolve(__dirname, '../..');
 const public = resolve(root, 'public');
-const path = resolve(__dirname, 'build');
+const path = resolve(__dirname, 'dist');
 const context = resolve(__dirname, 'src');
+const assets = resolve(__dirname, 'assets');
 
 const ENV_TYPE = process.env.ENV_TYPE || 'development';
 
@@ -45,13 +46,13 @@ module.exports = {
 
   output: {
     path,
-    filename: prod ? 'static/js/[name].js' : 'static/js/[name].[chunkhash].js',
+    filename: prod ? 'static/[name].js' : 'static/[name].[chunkhash].js',
   },
 
   resolve: {
     symlinks: true,
     alias: {
-      public,
+      '~public': public,
     },
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -113,7 +114,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'static/assets/[name].[hash].[ext]',
+              name: 'static/[name].[hash].[ext]',
             },
           },
         ],
@@ -133,7 +134,10 @@ module.exports = {
       template: 'index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: resolve(public, 'images'), to: 'assets/images' }],
+      patterns: [
+        { from: resolve(public, 'images'), to: 'assets/images' },
+        { from: assets, to: 'assets' },
+      ],
     }),
   ],
 

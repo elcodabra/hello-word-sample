@@ -6,3 +6,6 @@
 *.env.*
 **/.idea
 /build
+/packages/extension/dist
+package-lock.json
+build

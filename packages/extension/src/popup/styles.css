@@ -1,0 +1,236 @@
+
+body {
+  margin: 0;
+  font-family: "Euclid Circular A", serif;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+
+  width: 300px;
+  height: 464px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--font-color);
+}
+
+h1 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 50px;
+}
+main {
+  padding: 32px 20px;
+  height: 362px;
+  box-sizing: border-box;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: inherit;
+}
+.hw_popup__logo {
+  color: var(--font-color);
+}
+.hw_popup__item_content {
+  width: calc(100% - 30px);
+  padding-right: 10px;
+}
+.hw_popup__item_clear {
+  display: none;
+  opacity: 0.5;
+}
+.hw_popup__item_clear:before {
+  content: ' ';
+  display: block;
+  background-image: url("~static/images/icon_clear.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  text-align: right;
+}
+.hw_popup__item_clear:hover {
+  opacity: 1;
+}
+.hw_popup__words-list-item:hover .hw_popup__item_clear {
+  display: block;
+}
+.hw_logo-item {
+  display: flex;
+  align-items: center;
+}
+.hw_logo-item-text {
+  display: inline;
+  margin-left: 8px;
+}
+.hw_logo-item-support {
+  margin-left: 4px;
+  font-size: 12px;
+}
+.hw_popup__support:hover .hw_logo-item-icon {
+  animation-duration: 0.6s;
+  animation-name: breathe;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes breathe {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+.hw_popup__delimiter {
+  width: 100%;
+  height: 1px;
+  background-color: var(--delimiter-color);
+}
+.hw_popup__title, .hw_select__title {
+  color: var(--link-color);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-bottom: 30px;
+}
+.hw_popup__main-word {
+  font-weight: bold;
+}
+.hw_popup__main-word:after {
+  content: ' ';
+}
+.hw_popup__transcription {
+  white-space: nowrap;
+}
+.hw_skeleton {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 48px;
+  height: 100%;
+}
+.hw_skeleton_icon {
+  display: flex;
+  justify-content: center;
+
+  padding: 26px 20px;
+  margin-bottom: 10px;
+}
+.hw_skeleton_icon-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  width: 114px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.14);
+  box-sizing: border-box;
+}
+.hw_skeleton_icon-list-item {
+  height: 7px;
+  width: 50px;
+  opacity: 0.4;
+  transform: scaleX(-1);
+  border-radius: 5.54px;
+  background-color: #DBDBDB;
+}
+.hw_skeleton_icon-list-item + .hw_skeleton_icon-list-item {
+  margin-top: 12px;
+}
+.hw_skeleton_icon-list-item__big {
+  height: 9.6px;
+  width: 72px;
+  opacity: 0.6;
+  border-radius: 7.92px;
+}
+.hw_skeleton_icon-list:after {
+  content: '+';
+  font-size: 30px;
+  line-height: 35px;
+
+  position: absolute;
+  bottom: -9px;
+  right: -13px;
+
+  color: #C1BEBE;
+  background-color: var(--bg-color);
+  height: 36px;
+  width: 36px;
+  border-radius: 36px;
+  box-shadow: -5px 5px 15px 0 rgba(0,0,0,0.12);
+}
+.hw_skeleton_title {
+  font-size: 17px;
+  margin: 8px;
+}
+.hw_skeleton_hint {
+  color: var(--link-color);
+}
+.hw_popup__words {
+  height: calc(100% - 35px); /* 51px - footer + padding */
+
+  font-size: 15px;
+}
+.hw_popup__words-list {
+  list-style: none;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  margin: 0;
+  overflow-y: scroll;
+  height: 100%;
+  scrollbar-width: none;
+}
+.hw_popup__words-list-item {
+  display: flex;
+  margin-top: 17px;
+}
+.hw_popup__words-list-item:first-child {
+  margin-top: 0;
+}
+.hw_popup__words-list-item::before {
+  content: "\2022";
+  font-weight: bold;
+  /*display: inline-block;*/
+  margin-right: 10px;
+  margin-left: -1em;
+  color: var(--link-color);
+}
+.hw_popup__words-list::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--font-color-dark-theme);
+    background-color: var(--bg-color-dark-theme);
+  }
+  a:hover {
+    color: var(--font-color-dark-theme);
+  }
+  .hw_popup__logo {
+    color: var(--font-color-dark-theme);
+  }
+  .hw_popup__item_clear:before {
+    background-image: url("~static/images/icon_clear--dark.svg");
+  }
+  .hw_skeleton_icon-list:after {
+    color: #807E87;
+    background-color: var(--bg-color-dark-theme);
+  }
+}

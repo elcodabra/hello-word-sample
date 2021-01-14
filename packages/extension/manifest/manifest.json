@@ -1,0 +1,55 @@
+{
+  "name": "__MSG_name__",
+  "short_name": "Hello Word",
+  "version": "1.0.0",
+  "default_locale": "en",
+  "description": "__MSG_Description__",
+  "content_scripts": [{
+    "run_at": "document_idle",
+    "matches": [
+      "*://*/*"
+    ],
+    "all_frames": true,
+    "js": [
+      "./js/vendor.js",
+      "./js/content.js"
+    ],
+    "css": [
+      "./styles/fonts.css",
+      "./styles/content.css"
+    ]
+  }],
+  "web_accessible_resources": [
+    "*.ttf",
+    "*.eot",
+    "*.woff",
+    "*.woff2",
+    "images/*.svg"
+  ],
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+  "optional_permissions": [
+    "*://*/*"
+  ],
+  "browser_action": {
+    "default_title": "__MSG_name__",
+    "default_popup": "./pages/popup.html",
+    "default_icon": "./images/icon_logo.png"
+  },
+  "icons": {
+    "128": "./images/icon_logo128.png"
+  },
+  "background": {
+    "scripts": [
+      "./js/background.js"
+    ],
+    "persistent": false
+  },
+  "options_ui": {
+    "page": "./pages/options.html",
+    "open_in_tab": true
+  },
+  "manifest_version": 2
+}

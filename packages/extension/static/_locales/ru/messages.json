@@ -1,0 +1,56 @@
+{
+  "short_name": {
+    "message": "Hello, Word!"
+  },
+  "name": {
+    "message": "Hello, Word! – Изучайте языки по субтитрам"
+  },
+  "description": {
+    "message": "Ускорьте изучение языка с Hello, Word!"
+  },
+  "support_us": {
+    "message": "Поддержите нас"
+  },
+  "iknow_word": {
+    "message": "Знаю слово"
+  },
+  "next_word": {
+    "message": "Следующее"
+  },
+  "select_lang": {
+    "message": "ПЕРЕВОДИМ:"
+  },
+  "saved_words": {
+    "message": "СОХРАНЕНО: $1"
+  },
+  "play_words": {
+    "message": "УЧИМ СЕГОДНЯ: $1"
+  },
+  "back_button": {
+    "message": "Назад"
+  },
+  "clear_button": {
+    "message": "Очистить"
+  },
+  "start_button": {
+    "message": "Тренировать"
+  },
+  "finish_button": {
+    "message": "Завершить"
+  },
+  "skeleton_empty_title": {
+    "message": "Нет новых слов"
+  },
+  "skeleton_empty_hint": {
+    "message": "Добавьте слова из видео, чтобы увидеть их здесь."
+  },
+  "translation_not_found_title": {
+    "message": "Перевод не найден"
+  },
+  "translation_not_found_description": {
+    "message": "Мы не смогли ничего найти по языкам"
+  },
+  "translation_not_found_languages": {
+    "message": "$1-$2"
+  }
+}

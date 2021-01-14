@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extension Options</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    "
+  >
+    <div>
+      <label>
+        <input type="checkbox" id="devMode" />
+        I'm a developer
+      </label>
+    </div>
+    <div id="status" style="margin: 10px"></div>
+    <div style="display: flex">
+      <button id="save">Save</button>
+      <button id="clear">Clear</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <script src="../js/options.js"></script>
+  </body>
+</html>

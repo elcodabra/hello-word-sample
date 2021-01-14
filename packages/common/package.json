@@ -1,7 +1,7 @@
 {
   "name": "@wordzzz/common",
   "version": "1.0.0",
-  "description": "Wordzzz - Common components",
+  "description": "Hello Word - Common components",
   "author": "Aleksandr Konovalov",
   "license": "MIT",
   "main": "src/index.js",

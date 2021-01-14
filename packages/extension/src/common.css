@@ -1,0 +1,78 @@
+:root {
+  --main-color: linear-gradient(158.56deg, #FF43A5 30%, #FF9358 100%);
+  --second-color: #FF43A5;
+  --delimiter-color: rgba(216, 216, 216, .3);
+  --word-color-hover: #FF9358;
+
+  --font-color: #000000;
+  --link-color: #999999;
+  --btn-color-hover: #F8F8F9;
+  --btn-color-hover-dark-theme: #43404F;
+  --bg-color: #fff;
+  --font-color-dark-theme: #ffffff;
+  --bg-color-dark-theme: #393644;
+}
+
+.hw_button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: "Euclid Circular A";
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.hw_button__disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.hw_button__primary {
+  transition: opacity 0.2s;
+  /*border-radius: 0 0 12px 12px;*/
+  background-image: var(--main-color);
+  color: var(--bg-color);
+}
+.hw_button__primary:hover {
+  /*background-image: none;*/
+  background-color: var(--bg-color);
+  opacity: 0.85;
+}
+.hw_button__secondary {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 13px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.17px;
+  color: var(--font-color);
+}
+.hw_button__secondary:hover {
+  background-color: var(--btn-color-hover);
+}
+.hw_button__icon {
+  color: var(--second-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hw_button__icon, .hw_button__secondary, .hw_button__transparent {
+    color: var(--font-color-dark-theme);
+  }
+  .hw_button__secondary:hover {
+    background-color: var(--btn-color-hover-dark-theme);
+  }
+  .hw_button__transparent:hover {
+    color: var(--second-color);
+  }
+}

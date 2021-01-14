@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~components/*" : ["./src/components/*"],
+      "~public/*" : ["../../public/*"],
+      "~static/*" : ["./src/static/*"],
+      "~utils" : ["./src/utils"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "static"
+  ]
+}

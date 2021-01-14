@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Popup } from '@wordzzz/common';
+import Section from './Section';
+
+const images = [
+  {
+    src: './assets/images/youtube_bg',
+    alt: 'Learn languages with videos',
+    description:
+      'Learn languages with while watching your favourite shows on <b>YouTube & Netflix</b>',
+  },
+];
 
 const Home = () => (
   <main className="container">
@@ -12,18 +21,20 @@ const Home = () => (
           src="./assets/images/logo.svg"
           width={45}
           height={45}
-          alt="Logo of Wordzzz.app"
+          alt="Logo of Hello Word.app"
         />
       </Link>
       <Link to="/" className="header__title">
-        wordzzz
+        hello, word!
       </Link>
     </header>
-    <Popup view="loading" />
+    {images.map((item, id) => (
+      <Section key={id} id={id} {...item} />
+    ))}
     <nav className="nav nav-main" id="links">
       <div className="nav__title">
         <h2>The New face of learning</h2>
-        <div>Download Wordzzz extension for your</div>
+        <div>Download Hello Word extension for your</div>
         <div>favourite web browser.</div>
       </div>
       <div className="nav__links">
@@ -58,7 +69,8 @@ const Home = () => (
     </nav>
     <footer className="footer">
       <div className="footer__item">
-        <div className="footer_title">Wordzzz app</div>© Copyright 2020 Wordzzz
+        <div className="footer_title">Hello Word app</div>© Copyright 2020 Hello
+        Word
       </div>
       <div className="footer__item">
         <div className="footer_title">Product</div>

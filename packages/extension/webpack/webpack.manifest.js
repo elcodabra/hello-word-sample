@@ -1,54 +1,57 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const validateOptions = require('schema-utils');
+const { validate } = require('schema-utils');
 
 const fs = require('fs');
 
-const manifest = require("../manifest/manifest.json");
-const firefoxManifestExtra = require("../manifest/firefox-manifest-extra.json");
-const chromeManifestExtra = require("../manifest/chrome-manifest-extra.json");
-const betaManifestExtra = require("../manifest/beta-manifest-extra.json");
-const firefoxBetaManifestExtra = require("../manifest/firefox-beta-manifest-extra.json");
+const manifest = require('../manifest/manifest.json');
+const firefoxManifestExtra = require('../manifest/firefox-manifest-extra.json');
+const chromeManifestExtra = require('../manifest/chrome-manifest-extra.json');
+const betaManifestExtra = require('../manifest/beta-manifest-extra.json');
+const firefoxBetaManifestExtra = require('../manifest/firefox-beta-manifest-extra.json');
 
 // schema for options object
 const schema = {
   type: 'object',
   properties: {
     browser: {
-      type: 'string'
+      type: 'string',
     },
     pretty: {
-      type: 'boolean'
+      type: 'boolean',
     },
     steam: {
-      type: 'string'
-    }
-  }
+      type: 'string',
+    },
+  },
 };
 
 class BuildManifest {
-  constructor (options = {}) {
-    validateOptions(schema, options, "Build Manifest Plugin");
+  constructor(options = {}) {
+    validate(schema, options, 'Build Manifest Plugin');
 
     this.options = options;
   }
 
-  apply(compiler) {
-    const distFolder = path.resolve(__dirname, "../dist/");
-    const distManifestFile = path.resolve(distFolder, "manifest.json");
+  apply() {
+    const distFolder = path.resolve(__dirname, '../dist/');
+    const distManifestFile = path.resolve(distFolder, 'manifest.json');
 
     // Add missing manifest elements
-    if (this.options.browser.toLowerCase() === "firefox") {
+    if (this.options.browser.toLowerCase() === 'firefox') {
       mergeObjects(manifest, firefoxManifestExtra);
-    } else if (this.options.browser.toLowerCase() === "chrome" || this.options.browser.toLowerCase() === "chromium") {
+    } else if (
+      this.options.browser.toLowerCase() === 'chrome' ||
+      this.options.browser.toLowerCase() === 'chromium'
+    ) {
       mergeObjects(manifest, chromeManifestExtra);
     }
 
-    if (this.options.stream === "beta") {
+    if (this.options.stream === 'beta') {
       mergeObjects(manifest, betaManifestExtra);
 
-      if (this.options.browser.toLowerCase() === "firefox") {
+      if (this.options.browser.toLowerCase() === 'firefox') {
         mergeObjects(manifest, firefoxBetaManifestExtra);
       }
     }
@@ -56,7 +59,7 @@ class BuildManifest {
     let result = JSON.stringify(manifest);
     if (this.options.pretty) result = JSON.stringify(manifest, null, 2);
 
-    fs.mkdirSync(distFolder, {recursive: true});
+    fs.mkdirSync(distFolder, { recursive: true });
     fs.writeFileSync(distManifestFile, result);
   }
 }

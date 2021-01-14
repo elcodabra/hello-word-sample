@@ -76,6 +76,7 @@ rules:
   max-classes-per-file: off
   no-shadow: off
   no-console: error
+  dot-notation: off
 
   import/no-extraneous-dependencies: off
   import/no-unresolved: off
@@ -102,6 +103,7 @@ rules:
   react/jsx-tag-spacing: off
   react/jsx-first-prop-new-line: off
   react/jsx-props-no-multi-spaces: off
+  react/no-array-index-key: off
 
   # quote-props: [error, as-needed]
   eqeqeq: [error, smart]
@@ -152,3 +154,4 @@ rules:
 
   react-hooks/rules-of-hooks: error
   react-hooks/exhaustive-deps: error
+  '@typescript-eslint/ban-ts-comment': off
