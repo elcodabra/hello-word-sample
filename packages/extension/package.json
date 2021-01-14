@@ -21,7 +21,8 @@
     "build:watch:firefox": "webpack --env browser=firefox --config webpack/webpack.dev.js --watch",
     "dev": "npm run build:dev && concurrently \"npm run clean\" \"npm run web-run\" \"npm run build:watch\"",
     "dev:firefox": "npm run build:dev:firefox && concurrently \"npm run clean\" \"npm run web-run:firefox\" \"npm run build:watch:firefox\"",
-    "clean": "rimraf dist",
+    "archive": "zip -r hello-word.zip ./dist",
+    "clean": "rimraf dist hello-word.zip",
     "check-types": "tsc"
   },
   "dependencies": {

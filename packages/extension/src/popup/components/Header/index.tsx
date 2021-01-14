@@ -1,5 +1,6 @@
 import React from 'react';
 
+// @ts-ignore
 import logoUrl from '~public/images/logo.svg';
 import { IconHeart } from '~components/icons';
 
