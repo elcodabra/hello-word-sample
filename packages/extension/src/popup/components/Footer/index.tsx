@@ -8,7 +8,7 @@ const Footer = ({ disabled }) => (
       className={cn('hw_button hw_button__primary', {
         hw_button__disabled: disabled,
       })}
-      href={`chrome-extension://${chrome.runtime.id}/pages/learn.html`}
+      href="/pages/learn.html"
       target="_blank"
       rel="noreferrer"
       // disabled={disabled}

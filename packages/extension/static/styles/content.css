@@ -1,10 +1,9 @@
-
 .hw-icon {
   border: 3px solid;
   border-color: var(--font-color-dark-theme);
   border-radius: 50%;
-  box-shadow: 0 11px 33px 0 rgba(0,0,0,0.14);
-  opacity: .9;
+  box-shadow: 0 11px 33px 0 rgba(0, 0, 0, 0.14);
+  opacity: 0.9;
   cursor: pointer;
 }
 
@@ -12,4 +11,17 @@
   border: 2px solid;
   border-color: var(--font-color-dark-theme);
   opacity: 1;
+}
+
+.hw-icon__logo-content {
+  width: 25px;
+  height: 25px;
+  background: url("../images/logo.svg") no-repeat;
+  background-size: contain;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  .hw-icon__logo-content {
+    background: url("chrome-extension://__MSG_@@extension_id__/images/logo.svg") no-repeat;
+    background-size: contain;
+  }
 }

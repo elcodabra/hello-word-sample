@@ -19,8 +19,8 @@
     "build:watch": "npm run build:watch:chrome",
     "build:watch:chrome": "webpack --env browser=chrome --config webpack/webpack.dev.js --watch",
     "build:watch:firefox": "webpack --env browser=firefox --config webpack/webpack.dev.js --watch",
-    "dev": "npm run build:dev && concurrently \"npm run clean\" \"npm run web-run\" \"npm run build:watch\"",
-    "dev:firefox": "npm run build:dev:firefox && concurrently \"npm run clean\" \"npm run web-run:firefox\" \"npm run build:watch:firefox\"",
+    "dev": "npm run clean && npm run build:dev && concurrently \"npm run web-run\" \"npm run build:watch\"",
+    "dev:firefox": "npm run clean && npm run build:dev:firefox && concurrently \"npm run web-run:firefox\" \"npm run build:watch:firefox\"",
     "archive": "zip -r hello-word.zip ./dist",
     "clean": "rimraf dist hello-word.zip",
     "check-types": "tsc"

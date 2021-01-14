@@ -46,10 +46,10 @@ const iconId = 'hw-icon';
       block.style.top = `${e.pageY}px`;
 
       const logo = document.createElement('img');
-      logo.src = `chrome-extension://${chrome.runtime.id}/images/logo.svg`;
+      // logo.src = `chrome-extension://${chrome.runtime.id}/images/logo.svg`;
       logo.width = 25;
       logo.height = 25;
-      logo.className = 'hw-icon';
+      logo.className = 'hw-icon hw-icon__logo-content';
 
       block.append(logo);
 
