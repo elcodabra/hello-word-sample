@@ -16,10 +16,16 @@
 .hw-icon__logo-content {
   width: 25px;
   height: 25px;
-  background: url("../images/logo.svg") no-repeat;
-  background-size: contain;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+
+@-moz-document url-prefix() {
+  .hw-icon__logo-content {
+    background: url("../images/logo.svg") no-repeat;
+    background-size: contain;
+  }
+}
+
+@supports not (-moz-appearance:none) {
   .hw-icon__logo-content {
     background: url("chrome-extension://__MSG_@@extension_id__/images/logo.svg") no-repeat;
     background-size: contain;
