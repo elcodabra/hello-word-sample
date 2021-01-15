@@ -7,16 +7,30 @@ export const sendTranslateRequest = (search: string): Promise<Word> =>
     .then((response) => response.json())
     .then((data) => {
       if (data && data.length > 0) {
-        return {
+        const result = {
           text: data[0].text,
           translations: data[0].meanings
             .slice(0, 2)
             .map(({ translation: { text } }) => text),
-          transcription: `/${data[0].meanings[0].transcription}/`,
-          previewUrl: data[0].meanings[0].previewUrl,
-          imageUrl: data[0].meanings[0].imageUrl,
-          soundUrl: data[0].meanings[0].soundUrl,
         };
+
+        if (data[0].meanings[0].transcription) {
+          result['transcription'] = `/${data[0].meanings[0].transcription}/`;
+        }
+
+        if (data[0].meanings[0].previewUrl) {
+          result['previewUrl'] = data[0].meanings[0].previewUrl;
+        }
+
+        if (data[0].meanings[0].imageUrl) {
+          result['imageUrl'] = data[0].meanings[0].imageUrl;
+        }
+
+        if (data[0].meanings[0].soundUrl) {
+          result['soundUrl'] = data[0].meanings[0].soundUrl;
+        }
+
+        return result;
       }
       throw new Error('Empty data');
     })

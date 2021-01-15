@@ -48,9 +48,6 @@
     "message": "Translation not found"
   },
   "translation_not_found_description": {
-    "message": "We can't find anything for the languages"
-  },
-  "translation_not_found_languages": {
-    "message": "$1-$2"
+    "message": "We can't find anything for the word"
   }
 }

@@ -48,9 +48,6 @@
     "message": "Перевод не найден"
   },
   "translation_not_found_description": {
-    "message": "Мы не смогли ничего найти по языкам"
-  },
-  "translation_not_found_languages": {
-    "message": "$1-$2"
+    "message": "Мы не смогли ничего найти по этому слову"
   }
 }
