@@ -48,7 +48,7 @@ footer {
   padding-right: 10px;
 }
 .hw_popup__item_clear {
-  display: none;
+  visibility: hidden;
   opacity: 0.5;
 }
 .hw_popup__item_clear:before {
@@ -65,7 +65,7 @@ footer {
   opacity: 1;
 }
 .hw_popup__words-list-item:hover .hw_popup__item_clear {
-  display: block;
+  visibility: visible;
 }
 .hw_logo-item {
   display: flex;
@@ -181,7 +181,7 @@ footer {
   color: var(--link-color);
 }
 .hw_popup__words {
-  height: calc(100% - 35px); /* 51px - footer + padding */
+  height: calc(100% - 35px);
 
   font-size: 15px;
 }
@@ -204,16 +204,14 @@ footer {
 .hw_popup__words-list-item::before {
   content: "\2022";
   font-weight: bold;
-  /*display: inline-block;*/
   margin-right: 10px;
   margin-left: -1em;
   color: var(--link-color);
 }
 .hw_popup__words-list::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
-
 
 @media (prefers-color-scheme: dark) {
   body {

@@ -10,7 +10,7 @@ export const Popup = ({
   left,
   top,
   bottom,
-  word,
+  text,
   transcription,
   translations,
   onAdd,
@@ -19,7 +19,7 @@ export const Popup = ({
 
   useEffect(() => {
     setAnimated(false);
-  }, [word]);
+  }, [text]);
 
   const handleAdd = (e) => {
     e.stopPropagation();
@@ -40,7 +40,7 @@ export const Popup = ({
             {transcription && (
               <div className="hw_popup__transcription">{transcription}</div>
             )}
-            <div className="hw_popup__main-word">{word}</div>
+            <div className="hw_popup__main-word">{text}</div>
             <div className="hw_popup__translation">
               {translations.filter(onlyUnique).slice(0, 2).join(', ')}
             </div>

@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { Popup } from '@wordzzz/common';
+import { sendTranslateRequest, Popup } from '@wordzzz/common';
 
 import { setWordToStorage } from '~utils';
 
 const App = ({ x, y, word }) => {
-  const [status, setStatus] = useState('loading');
+  const [data, setData] = useState({ view: 'loading' });
 
   useEffect(() => {
-    setStatus('loading');
-    setTimeout(() => {
-      setStatus('success');
-    }, 300);
+    setData({ view: 'loading' });
+    sendTranslateRequest(word)
+      .then((response) => {
+        if (!response) throw new Error('Translation not found');
+        setData({ view: 'success', ...response });
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        setData({ view: 'error' });
+      });
   }, [word]);
 
   const handleAdd = () => {
-    setWordToStorage(word, { text: word, translations: [word] });
+    // eslint-disable-next-line no-unused-vars
+    const { view, ...response } = data;
+    setWordToStorage(word, response);
   };
 
-  return (
-    <Popup
-      view={status}
-      left={x}
-      top={y}
-      word={word}
-      translations={[word]}
-      onAdd={handleAdd}
-    />
-  );
+  return <Popup left={x} top={y} {...data} onAdd={handleAdd} />;
 };
 
 export default App;

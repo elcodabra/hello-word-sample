@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Popup } from '@wordzzz/common';
+import { sendTranslateRequest, Popup } from '@wordzzz/common';
 
 import Image from './Image';
 
@@ -23,7 +23,7 @@ const getCaptionText = (selected, firstRef) =>
   );
 
 const Section = ({ id, alt, src, description }) => {
-  const [popup, setPopup] = useState(null);
+  const [data, setData] = useState(null);
   const [currentWord, setCurrentWord] = useState(null);
   const initialWordRef = useRef(null);
 
@@ -36,12 +36,19 @@ const Section = ({ id, alt, src, description }) => {
     const left = rect.left + window.scrollX - (200 / 2 - rect.width / 2);
     const bottom = rect.bottom + window.scrollY + 20;
 
-    setPopup({ view: 'loading', left, bottom });
+    setData({ view: 'loading', left, bottom });
     setCurrentWord(word);
 
-    setTimeout(() => {
-      setPopup({ view: 'success', left, bottom, word, translations: [word] });
-    }, 300);
+    sendTranslateRequest(word)
+      .then((response) => {
+        if (!response) throw new Error('Translation not found');
+        setData({ view: 'success', left, bottom, ...response });
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        setData({ view: 'error', left, bottom });
+      });
   };
 
   return (
@@ -73,7 +80,7 @@ const Section = ({ id, alt, src, description }) => {
           {getCaptionText(currentWord, initialWordRef)}
         </div>
       </div>
-      {popup && <Popup {...popup} />}
+      {data && <Popup {...data} />}
     </section>
   );
 };

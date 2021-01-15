@@ -18,7 +18,7 @@ const iconId = 'hw-icon';
     document.addEventListener('mouseup', (e) => {
       const icon = document.getElementById(iconId);
       const popup = document.getElementById(popupId);
-      if (popup.contains(e.target) || (icon && icon.contains(e.target))) {
+      if (popup?.contains(e.target) || icon?.contains(e.target)) {
         return null;
       }
 
