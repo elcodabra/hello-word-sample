@@ -5,7 +5,9 @@ const Main = ({ words, setWords }) => (
   <main>
     {words.length !== 0 && (
       <div className="hw_popup__title">
-        <span>{chrome.i18n.getMessage('saved_words', [words.length])}</span>
+        <span>
+          {chrome.i18n.getMessage('saved_words', [words.length.toString()])}
+        </span>
         <a
           href="#"
           style={{ float: 'right' }}

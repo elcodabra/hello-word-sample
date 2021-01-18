@@ -1,7 +1,7 @@
 
 .hw_popup {
   position: absolute;
-  z-index: 2021; /* because youtube header = z-index: 2020; */
+  z-index: 2021;
 
   min-width: 200px;
   max-width: 300px;

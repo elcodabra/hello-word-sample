@@ -10,7 +10,7 @@ const Game = ({ words, setView }) => {
   return (
     <div className="hw_game">
       <div className="hw_game-title">
-        <span>{chrome.i18n.getMessage('play_words', [words.length])}</span>
+        <span>{chrome.i18n.getMessage('play_words', [words.length.toString()])}</span>
       </div>
       <div className="hw_game-container">
         <div className="hw_card">
