@@ -33,8 +33,8 @@ const Section = ({ id, alt, src, description }) => {
     }
     const word = e.target.textContent;
     const rect = e.target.getBoundingClientRect();
-    const left = rect.left + window.scrollX - (200 / 2 - rect.width / 2);
-    const bottom = rect.bottom + window.scrollY + 20;
+    const left = e.target.offsetLeft - (200 / 2 - rect.width / 2);
+    const bottom = e.target.parentElement.getBoundingClientRect().height;
 
     setData({ view: 'loading', left, bottom });
     setCurrentWord(word);
@@ -78,9 +78,9 @@ const Section = ({ id, alt, src, description }) => {
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
         <div className="caption" onClick={onHandleRequest}>
           {getCaptionText(currentWord, initialWordRef)}
+          {data && <Popup {...data} />}
         </div>
       </div>
-      {data && <Popup {...data} />}
     </section>
   );
 };

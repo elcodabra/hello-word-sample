@@ -52,6 +52,7 @@ module.exports = {
   resolve: {
     symlinks: true,
     alias: {
+      react: resolve(__dirname, './node_modules/react'),
       '~public': public,
     },
     extensions: ['.tsx', '.ts', '.js'],
