@@ -49,5 +49,8 @@
   },
   "translation_not_found_description": {
     "message": "We can't find anything for the word"
+  },
+  "context_menu_translate_with_us": {
+    "message": "Translate «%s» with Hello, Word!"
   }
 }

@@ -9,9 +9,6 @@ type StorageChangeData = { [p: string]: StorageChange } & {
 
 window['__devMode'] = false;
 
-// Default badge color
-chrome.browserAction.setBadgeBackgroundColor({ color: '#E02020' });
-
 const setBadgeFormatted = (items: Items) => {
   let unviewedWords = 0;
   // eslint-disable-next-line guard-for-in,no-restricted-syntax
@@ -22,6 +19,15 @@ const setBadgeFormatted = (items: Items) => {
     text: unviewedWords === 0 ? '' : unviewedWords.toString(),
   });
 };
+const setUpContextMenus = () => {
+  chrome.contextMenus.create({
+    title: chrome.i18n.getMessage('context_menu_translate_with_us'),
+    id: 'hw_translate',
+    contexts: ['selection'],
+  });
+};
+
+chrome.browserAction.setBadgeBackgroundColor({ color: '#E02020' });
 
 chrome.storage.sync.get(null, ({ __config = {}, ...items }: StorageData) => {
   window['__devMode'] = __config.devMode;
@@ -36,4 +42,25 @@ chrome.storage.onChanged.addListener(({ __config }: StorageChangeData) => {
       setBadgeFormatted(items);
     });
   }
+});
+
+chrome.contextMenus.onClicked.addListener((itemData) => {
+  if (itemData.menuItemId === 'hw_translate') {
+    chrome.tabs.query(
+      {
+        active: true,
+        currentWindow: true,
+      },
+      (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, {
+          action: 'translate',
+          word: itemData.selectionText,
+        });
+      }
+    );
+  }
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  setUpContextMenus();
 });

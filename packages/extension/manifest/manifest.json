@@ -27,8 +27,11 @@
     "images/*.svg"
   ],
   "permissions": [
+    "activeTab",
+    "tabs",
     "storage",
-    "notifications"
+    "notifications",
+    "contextMenus"
   ],
   "optional_permissions": [
     "*://*/*"
@@ -39,6 +42,7 @@
     "default_icon": "./images/icon_logo.png"
   },
   "icons": {
+    "16": "./images/icon_logo.png",
     "128": "./images/icon_logo128.png"
   },
   "background": {
